@@ -11,10 +11,7 @@ import java.util.Date;
 public class Ejercicio2 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static PrintStream ps = new PrintStream(System.out);
-	
-	
-	
-	
+
 	// Dados tres apellidos, la computadora los muestra ordenados alfabéticamente
 	public static void Ej2a() {
         ps.println("Introduce tres apellidos para ordenarlos alfabéticamente:");
@@ -143,9 +140,6 @@ public class Ejercicio2 {
 	}
 	
 	
-	
-	
-	
 	// Dada la fecha de nacimiento de una persona, la computadora muestra su signo del zodíaco.
 	public static void Ej2e() {
 		try {
@@ -156,7 +150,7 @@ public class Ejercicio2 {
 	        Date fechaNacimiento;
 			fechaNacimiento = formatter.parse(fechaNacimientoText);
 			
-			String signo = Funcion.funciones.obtenerSignoZodiaco(fechaNacimiento);
+			String signo = funciones.obtenerSignoZodiaco(fechaNacimiento);
 			
 			ps.println("");
 	        ps.println("Su signo zodiacal es: " + signo);
