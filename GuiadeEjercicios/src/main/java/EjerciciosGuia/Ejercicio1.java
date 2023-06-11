@@ -1,7 +1,7 @@
 package EjerciciosGuia;
 
 import java.io.PrintStream;
-import funciones;
+import EjerciciosGuia.funciones;
 
 public class Ejercicio1 {
 	
