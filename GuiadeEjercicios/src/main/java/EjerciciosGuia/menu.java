@@ -20,8 +20,9 @@ public class menu {
         ps.println("1 - Ejercicio 1");
         ps.println("2 - Ejercicio 2");
         ps.println("3 - Ejercicio 3");
+        ps.println("4 - Ejercicio 4");
         ps.println("");
-        ps.println("Tu opción: ");
+        ps.println("Tu opcion: ");
 
         int opcion = Integer.parseInt(funciones.leer());
 
@@ -36,6 +37,8 @@ public class menu {
                 MenuEjer2();
             case 3:
                 MenuEjer3();
+            case 4:
+                MenuEjer4();
             default:
             	ps.println("");
                 ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
@@ -285,7 +288,52 @@ public class menu {
 	            	ps.println("");
 	                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
 	                MenuEjer3();
-	        }
+	        	}
+			}
+	        public static void MenuEjer4() {
+		        PrintStream ps = new PrintStream(System.out);
+		        
+		        ps.println("");
+		        ps.println("---------------------------------------------------------------");
+		        ps.println("");
+		        ps.println("Elige un ejercicio para ver:");
+		        ps.println("");
+		        ps.println("0 - Salir");
+		        ps.println("1 - ");
+		        ps.println("2 - ");
+		        ps.println("");
+		        ps.println("Tu opción: ");
+		
+		        int opcion = Integer.parseInt(funciones.leer());
+		
+		        switch(opcion) {
+		            case 0:
+		            	ps.println("");
+		                ps.println("Saliendo al menú principal...");
+		                ps.println("");
+		                MenuPrincipal();
+		                break;
+		            case 1:
+		            	ps.println("");
+		                ps.println("Ejecutando ejercicio...");
+		                ps.println("");
+		                ps.println("---------------------------------------------------------------");
+		                ps.println("");
+		                Ejercicio3.Ej3a();
+		                MenuEjer3();
+		            case 2:
+		            	ps.println("");
+		                ps.println("Ejecutando ejercicio...");
+		                ps.println("");
+		                ps.println("---------------------------------------------------------------");
+		                ps.println("");
+		                Ejercicio3.Ej3b();
+		                MenuEjer3();
+		            default:
+		            	ps.println("");
+		                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
+		                MenuEjer3();
+		        }
 	        ps.close();
 	}
 	
