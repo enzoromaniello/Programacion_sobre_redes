@@ -4,96 +4,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.io.InputStreamReader;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
+import java.io.FileReader;
+import java.util.Random;
 
 public class funciones {
-
-	public static String obtenerSignoZodiaco(Date fechaNacimiento) {
-		int mes = fechaNacimiento.getMonth() + 1;
-        int dia = fechaNacimiento.getDate();
-        
-        switch (mes) {
-            case 1: //Enero
-                if (dia >= 20) {
-                    return "Acuario";
-                } else {
-                    return "Capricornio";
-                }
-            case 2: //Febrero
-                if (dia >= 19) {
-                    return "Piscis";
-                } else {
-                    return "Acuario";
-                }
-            case 3: //Marzo
-                if  (dia >= 21) {
-                    return "Aries";
-                } else {
-                    return "Piscis";
-                }
-            case 4: //Abril
-                if (dia >= 20) {
-                    return "Tauro";
-                } else {
-                    return "Aries";
-                }
-            case 5: //Mayo
-                if (dia >= 21) {
-                    return "Géminis";
-                } else {
-                    return "Tauro";
-                }
-            case 6: //Junio
-                if (dia >= 21) {
-                    return "Cáncer";
-                } else {
-                    return "Géminis";
-                }
-            case 7: //Julio
-                if (dia >= 23) {
-                    return "Leo";
-                } else {
-                    return "Cáncer";
-                }
-            case 8: //Agosto
-                if (dia >= 23) {
-                    return "Virgo";
-                } else {
-                    return "Leo";
-                }
-            case 9: //Septiembre
-                if (dia >= 23) {
-                    return "Libra";
-                } else {
-                    return "Virgo";
-                }
-            case 10: //Octubre
-                if (dia >= 23) {
-                    return "Escorpio";
-                } else {
-                    return "Libra";
-                }
-            case 11: //Noviembre
-                if (dia >= 22) {
-                    return "Sagitario";
-                } else {
-                    return "Escorpio";
-                }
-            case 12: //Diciembre
-                if (dia >= 22) {
-                    return "Capricornio";
-                } else {
-                    return "Sagitario";
-                }
-            default:
-                return "Fecha inválida";
-        }
-    }
-
-
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static PrintStream ps = System.out;
+	
+	// Lee una cadena de texto.
 	public static String leer() {
 		int Byte = 0;
 		String cadena = "";
@@ -110,39 +34,44 @@ public class funciones {
 		return cadena;
 	}
 
+	
+	
+	// Ingresa datos dados por el usuario en una lista.
 	public static String[] ingresarDatosEnLista() {
-	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	        PrintStream ps = System.out;
+
+        ps.println("¿Cuántos datos desea ingresar?");
+        int cantidadDatos = 0;
+        
+        try {
+            cantidadDatos = Integer.parseInt(br.readLine());
+            ps.println("");
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        String[] datos = new String[cantidadDatos];
+
+        try {
+            for( int i = 0 ; i < cantidadDatos ; i++ ) {
+                ps.println("Ingrese el dato: ");
+                datos[i] = br.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        ps.println("");
+        ps.println("Se creó el archivo.");
+
+        return datos;
+    }
 	
-	        ps.println("¿Cuántos datos desea ingresar?");
-	        int cantidadDatos = 0;
 	
-	        try {
-	            cantidadDatos = Integer.parseInt(br.readLine());
-	            ps.println("");
-	        } catch (IOException | NumberFormatException e) {
-	            e.printStackTrace();
-	        }
 	
-	        String[] datos = new String[cantidadDatos];
-	
-	        try {
-	            for( int i = 0 ; i < cantidadDatos ; i++ ) {
-	                ps.println("Ingrese el dato: ");
-	                datos[i] = br.readLine();
-	            }
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	
-	        ps.println("");
-	        ps.println("Se creó el archivo.");
-	
-	        return datos;
-	    }
+	// Filtra solo los datos numericos de una lista.
 	public static List<Integer> filtrarNumeros(String[] datos) {
         List<Integer> numerosLista = new ArrayList<>();
-
+        
         for (String dato : datos) {
             try {
                 int numero = Integer.parseInt(dato);
@@ -151,9 +80,173 @@ public class funciones {
                 // No es un número entero, ignorar y continuar
             }
         }
-
+        
         return numerosLista;
+        
+	}
+	
+	
+	
+	// Lee cualquier archivo de texto plano que se la pase como par�metro.
+	public static String leerArchivo(String nombreArchivo) {
+	    String texto = "";
 
+	    try {
+	        FileReader fr = new FileReader(nombreArchivo);
+	        BufferedReader br = new BufferedReader(fr);
+
+	        String linea = "";
+
+	        while ((linea = br.readLine()) != null) {
+	            texto += "\n" + linea;
+	        }
+
+	        br.close();
+
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    return texto;
+	}
+	
+    
+	
+	// Determina si un n�mero es primo.
+	public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+        
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        
+        return true;
     }
+	
+	
+	
+	// Dependiendo de la palabra que contenga �, reemplaza la � por su equivalente fon�tico.
+	public static String reemplazarEquivalenteFonetico(String palabra) {
+        String palabraEditada = "";
+        int i = 0;
+        
+        while( i < palabra.length() ) {
+            char c = palabra.charAt(i);
+            if( c == '�' && i < palabra.length() - 1 ) {
+                char siguiente = palabra.charAt(i + 1);
+                switch(siguiente) {
+                    case 'a':
+                        palabraEditada += "nia";
+                        break;
+                    case 'e':
+                        palabraEditada += "nie";
+                        break;
+                    case 'i':
+                        palabraEditada += "nii";
+                        break;
+                    case 'o':
+                        palabraEditada += "nio";
+                        break;
+                    case 'u':
+                        palabraEditada += "niu";
+                        break;
+                    default:
+                        palabraEditada += "nio";
+                        break;
+                }
+                i++;
+            } else {
+                palabraEditada += c;
+            }
+            i++;
+        }
+        return palabraEditada;
+    }
+	
+	
+	
+	//
+	public static void mostrarResultado(List<Integer> numeros) {
+		ps.println("Números ingresados: " + leerValores(numeros));
+		ps.println("Suma de los valores: " + sumarValores(numeros));
+		ps.println("Promedio de los valores: " + sumarValores(numeros)/numeros.size());
+	}
+	
+	
+	
+	//
+	public static int leerValores(List<Integer> numeros) {
+		int cantidadNum = 0;
+		for( int i = 0 ; i < numeros.size() ; i++ ) {
+			cantidadNum+=1;
+		}
+		return cantidadNum;
+	}
+	
+	
+	
+	//
+	public static int sumarValores(List<Integer> numeros) {
+		int suma = 0;
+		for(Integer num : numeros) {
+			suma += num;
+		}
+		return suma;
+	}
+	
+	
+	
+	//
+	public static void imprimirElementos(List<String> lista) {
+        Iterator<String> iterator = lista.iterator();
+        while (iterator.hasNext()) {
+            String jugador = iterator.next();
+            System.out.println(jugador);
+        }
+    }
+	
+	
+	
+	//
+	 public static int[] generarNumerosRojos(int cantidad) {
+        int[] numerosRojos = new int[cantidad];
+        Random random = new Random();
 
+        for (int i = 0; i < cantidad; i++) {
+            int numeroRojo;
+            do {
+                numeroRojo = generarNumeroAleatorio(1, 33);
+            } while (existeNumero(numerosRojos, numeroRojo));
+
+            numerosRojos[i] = numeroRojo;
+        }
+
+        return numerosRojos;
+	 }
+	 
+	 
+	 
+	 //
+	 public static boolean existeNumero(int[] numeros, int numero) {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] == numero) {
+                return true;
+            }
+        }
+        return false;
+	 }
+	 
+	 
+	 
+	 //
+	 public static int generarNumeroAleatorio(int min, int max) {
+	        Random random = new Random();
+	        return random.nextInt(max - min + 1) + min;
+	 }
 }

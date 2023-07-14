@@ -9,12 +9,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Ejercicio2 {
+	
+	
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static PrintStream ps = new PrintStream(System.out);
-
-	// Dados tres apellidos, la computadora los muestra ordenados alfab√©ticamente
+	
 	public static void Ej2a() {
-        ps.println("Introduce tres apellidos para ordenarlos alfab√©ticamente:");
+        ps.println("Introduce tres apellidos para ordenarlos alfabÈticamente:");
         String apellido1;
         ps.println("");
         
@@ -60,13 +61,9 @@ public class Ejercicio2 {
 	}
 	
 	
-	
-	
-	
-	// 
 	public static void Ej2b() {
         try {
-	        ps.println("Ingrese cuatro n√∫meros reales (sin coma):");
+	        ps.println("Ingrese cuatro n˙meros reales (sin coma):");
 	        int num1 = Integer.parseInt(br.readLine());
 	        int num2 = Integer.parseInt(br.readLine());
 	        int num3 = Integer.parseInt(br.readLine());
@@ -84,28 +81,23 @@ public class Ejercicio2 {
 	        }
 	        
 	        ps.println("");
-	        ps.println("El n√∫mero menor es: " + numMenor);
+	        ps.println("El n˙mero menor es: " + numMenor);
         } catch (IOException e) {
         	e.printStackTrace();
         }
     }
 	
-	
-	
-	
-	
-	// Dado un n√∫mero, la computadora indica si es par o impar.
 	public static void Ej2c() {
 		try {
-			ps.println("Ingrese un n√∫mero sin coma: ");
+			ps.println("Ingrese un n˙mero sin coma: ");
 			
 	        int num = Integer.parseInt(br.readLine());
 	        if(num % 2 == 0) {
 	        	ps.println("");
-	            ps.println(num + " es un n√∫mero par.");
+	            ps.println(num + " es un n˙mero par.");
 	        } else {
 	        	ps.println("");
-	            ps.println(num + " es un n√∫mero impar.");
+	            ps.println(num + " es un n˙mero impar.");
 	        }
         } catch (IOException e) {
         	e.printStackTrace();
@@ -113,15 +105,11 @@ public class Ejercicio2 {
 	}
 	
 	
-	
-	
-	
-	// Dados dos n√∫meros reales, la computadora indica si el mayor es divisible por el menor.
 	public static void Ej2d() {
 		try {
-	        ps.println("Ingresa el primer n√∫mero:");
+	        ps.println("Ingresa el primer n˙mero:");
 	        double num1 = Double.parseDouble(br.readLine());
-	        ps.println("Ingresa el segundo n√∫mero:");
+	        ps.println("Ingresa el segundo n˙mero:");
 	        double num2 = Double.parseDouble(br.readLine());
 
 	        double mayor = Math.max(num1, num2);
@@ -129,18 +117,16 @@ public class Ejercicio2 {
 
 	        if (mayor % menor == 0) {
 	        	ps.println("");
-	            ps.println("El n√∫mero mayor es divisible por el menor.");
+	            ps.println("El n˙mero mayor es divisible por el menor.");
 	        } else {
 	        	ps.println("");
-	            ps.println("El n√∫mero mayor no es divisible por el menor.");
+	            ps.println("El n˙mero mayor no es divisible por el menor.");
 	        }
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	
-	// Dada la fecha de nacimiento de una persona, la computadora muestra su signo del zod√≠aco.
 	public static void Ej2e() {
 		try {
 			ps.println("Ingrese su fecha de nacimiento (formato dd/MM/yyyy): ");
@@ -150,10 +136,100 @@ public class Ejercicio2 {
 	        Date fechaNacimiento;
 			fechaNacimiento = formatter.parse(fechaNacimientoText);
 			
-			String signo = funciones.obtenerSignoZodiaco(fechaNacimiento);
+			String signo = "";
 			
-			ps.println("");
-	        ps.println("Su signo zodiacal es: " + signo);
+			int mes = fechaNacimiento.getMonth() + 1;
+	        int dia = fechaNacimiento.getDate();
+	        
+	        switch (mes) {
+	            case 1: //Enero
+	                if (dia >= 20) {
+	                	ps.println("Tu signo es: Acuario");
+	                } else {
+	                	ps.println("Tu signo es: Capricornio");
+	                }
+	                break;
+	            case 2: //Febrero
+	                if (dia >= 19) {
+	                	ps.println("Tu signo es: Piscis");
+	                } else {
+	                	ps.println("Tu signo es: Acuario");
+	                }
+	                break;
+	            case 3: //Marzo
+	                if  (dia >= 21) {
+	                	ps.println("Tu signo es: Aries");
+	                } else {
+	                	ps.println("Tu signo es: Piscis");
+	                }
+	                break;
+	            case 4: //Abril
+	                if (dia >= 20) {
+	                	ps.println("Tu signo es: Tauro");
+	                } else {
+	                	ps.println("Tu signo es: Aries");
+	                }
+	                break;
+	            case 5: //Mayo
+	                if (dia >= 21) {
+	                	ps.println("Tu signo es: GÈminis");
+	                } else {
+	                	ps.println("Tu signo es: Tauro");
+	                }
+	                break;
+	            case 6: //Junio
+	                if (dia >= 21) {
+	                	ps.println("Tu signo es: C·ncer");
+	                } else {
+	                	ps.println("Tu signo es: GÈminis");
+	                }
+	                break;
+	            case 7: //Julio
+	                if (dia >= 23) {
+	                	ps.println("Tu signo es: Leo");
+	                } else {
+	                	ps.println("Tu signo es: C·ncer");
+	                }
+	                break;
+	            case 8: //Agosto
+	                if (dia >= 23) {
+	                	ps.println("Tu signo es: Virgo");
+	                } else {
+	                	ps.println("Tu signo es: Leo");
+	                }
+	                break;
+	            case 9: //Septiembre
+	                if (dia >= 23) {
+	                	ps.println("Tu signo es: Libra");
+	                } else {
+	                	ps.println("Tu signo es: Virgo");
+	                }
+	                break;
+	            case 10: //Octubre
+	                if (dia >= 23) {
+	                	ps.println("Tu signo es: Escorpio");
+	                } else {
+	                	ps.println("Tu signo es: Libra");
+	                }
+	                break;
+	            case 11: //Noviembre
+	                if (dia >= 22) {
+	                	ps.println("Tu signo es: Sagitario");
+	                } else {
+	                	ps.println("Tu signo es: Escorpio");
+	                }
+	                break;
+	            case 12: //Diciembre
+	                if (dia >= 22) {
+	                	ps.println("Tu signo es: Capricornio");
+	                } else {
+	                    ps.println("Tu signo es: Sagitario");
+	                }
+	                break;
+	            default:
+	            	ps.println("Fecha inv·lida");
+	        }
+	        
 		} catch (ParseException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -162,11 +238,6 @@ public class Ejercicio2 {
         
 	}
 	
-	
-	
-	
-	
-	// Dado el nombre y apellido de 2 personas, la computadora muestra cu√°l de los 2 tiene el apellido m√°s largo.
 	public static void Ej2f() {
 		try {
 	        ps.println("Ingrese el nombre y apellido de la primera persona: ");
@@ -179,10 +250,10 @@ public class Ejercicio2 {
 
 	        if (apellido1.length() > apellido2.length()) {
 	        	ps.println("");
-	            ps.println(nombreApellido1[0] + " " + apellido1 + " tiene el apellido m√°s largo.");
+	            ps.println(nombreApellido1[0] + " " + apellido1 + " tiene el apellido m·s largo.");
 	        } else if (apellido1.length() < apellido2.length()) {
 	        	ps.println("");
-	            ps.println(nombreApellido2[0] + " " + apellido2 + " tiene el apellido m√°s largo.");
+	            ps.println(nombreApellido2[0] + " " + apellido2 + " tiene el apellido m·s largo.");
 	        } else {
 	        	ps.println("");
 	            ps.println("Ambos tienen apellidos de igual longitud.");
@@ -192,14 +263,9 @@ public class Ejercicio2 {
         }
 	}
 	
-	
-	
-	
-	
-	// Dado un entero N natural, la computadora muestra su tabla de multiplicar.
 	public static void Ej2g() {
 		try {
-	        ps.print("Ingrese un n√∫mero: ");
+	        ps.print("Ingrese un n˙mero: ");
 
 	        int n = Integer.parseInt(br.readLine());
 	        
@@ -213,15 +279,14 @@ public class Ejercicio2 {
         }
 	}
 	
-	// Dado un n√∫mero natural, la computadora indica si es primo o no.
 	public static void Ej2h() {
 		try {
 			boolean esPrimo = true;
-	        ps.println("Ingrese un n√∫mero natural:");
+	        ps.println("Ingrese un n˙mero natural:");
 			int num = Integer.parseInt(br.readLine());
 			
 	        if (num == 1 || num == 0) {
-	            ps.println(num + " no es un n√∫mero primo ni compuesto.");
+	            ps.println(num + " no es un n˙mero primo ni compuesto.");
 	            return;
 	        }
 
@@ -234,10 +299,10 @@ public class Ejercicio2 {
 
 	        if (esPrimo) {
 	        	ps.println("");
-	            ps.println(num + " es un n√∫mero primo.");
+	            ps.println(num + " es un n˙mero primo.");
 	        } else {
 	        	ps.println("");
-	            ps.println(num + " no es un n√∫mero primo.");
+	            ps.println(num + " no es un n˙mero primo.");
 	        }
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -1,7 +1,6 @@
 package EjerciciosGuia;
 
 import java.io.PrintStream;
-import EjerciciosGuia.funciones;
 
 public class menu {
 
@@ -12,36 +11,32 @@ public class menu {
 	 public static void MenuPrincipal() {
         PrintStream ps = new PrintStream(System.out);
 
-        ps.println("---------------------------------------------------------------");
-        ps.println("");
-        ps.println("¿Cuál ejercicio querés ver?");
-        ps.println("");
+        ps.println("Seleccione un ejercicio");
         ps.println("0 - Salir");
         ps.println("1 - Ejercicio 1");
         ps.println("2 - Ejercicio 2");
         ps.println("3 - Ejercicio 3");
         ps.println("4 - Ejercicio 4");
         ps.println("");
-        ps.println("Tu opcion: ");
+        ps.println("Ejercicio Seleccionado:");
 
         int opcion = Integer.parseInt(funciones.leer());
 
         switch(opcion) {
             case 0:
-                ps.println("");
-                ps.println("Saliendo...");
+                ps.println("has salido");
                 break;
             case 1:
                 MenuEjer1();
             case 2:
                 MenuEjer2();
             case 3:
-                MenuEjer3();
+            	MenuEjer3();
             case 4:
-                MenuEjer4();
+            	MenuEjer4();
             default:
             	ps.println("");
-                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
+                ps.println("Opci�n inv�lida. Por favor, ingrese una opci�n de las opciones disponibles.");
                 MenuPrincipal();
         }
     }
@@ -53,89 +48,89 @@ public class menu {
         PrintStream ps = new PrintStream(System.out);
         
         ps.println("");
-        ps.println("---------------------------------------------------------------");
+         
         ps.println("");
-        ps.println("Elige un ejercicio para ver:");
+        ps.println("Seleccione un ejercicio");
         ps.println("");
         ps.println("0 - Salir");
-        ps.println("1 - Calcula el valor del sueldo bruto dando como parámetros la cantidad de horas trabajadas y el valor por hora.");
-        ps.println("2 - Calcula el valor de un tercer ángulo dados el de los otros dos.");
-        ps.println("3 - Dada la superficie de un cuadrado (en m2), la computadora muestra su perímetro.");
-        ps.println("4 - Convierte la temperatura dada en Fahrenheit en Celsius.");
-        ps.println("5 - Dado un tiempo, lo convierte en días, horas, minutos y segundos.");
-        ps.println("6 - Dado el precio de un artículo, la computadora muestra los valores a pagar según cada plan.");
-        ps.println("7 - Dado el signo zodiacal del usuario, la computadora muestra su mes de nacimiento aproximado.");
+        ps.println("1");
+        ps.println("2");
+        ps.println("3");
+        ps.println("4");
+        ps.println("5");
+        ps.println("6");
+        ps.println("7");
         ps.println("");
-        ps.println("Tu opción: ");
+        ps.println("Ejercicio Seleccionado:");
 
         int opcion = Integer.parseInt(funciones.leer());
 
         switch(opcion) {
             case 0:
             	ps.println("");
-                ps.println("Saliendo al menú principal...");
+                ps.println("Has salido");
                 ps.println("");
                 MenuPrincipal();
                 break;
             case 1:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
                 Ejercicio1.Ej1a();
                 MenuEjer1();
             case 2:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio1.Ej1a();
+                Ejercicio1.Ej1b();
                 MenuEjer1();
             case 3:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio1.Ej1a();
+                Ejercicio1.Ej1c();
                 MenuEjer1();
             case 4:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio1.Ej1a();
+                Ejercicio1.Ej1d();
                 MenuEjer1();
             case 5:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio1.Ej1a();
+                Ejercicio1.Ej1e();
                 MenuEjer1();
             case 6:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio1.Ej1a();
+                Ejercicio1.Ej1f();
                 MenuEjer1();
             case 7:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio1.Ej1a();
+                Ejercicio1.Ej1g();
                 MenuEjer1();
             default:
             	ps.println("");
-                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
+                ps.println("Opci�n no valida");
                 MenuEjer1();
         }
         ps.close();
@@ -149,194 +144,282 @@ public class menu {
         PrintStream ps = new PrintStream(System.out);
         
         ps.println("");
-        ps.println("---------------------------------------------------------------");
+         
         ps.println("");
-        ps.println("Elige un ejercicio para ver:");
+        ps.println("Seleccione un ejercicio");
         ps.println("");
         ps.println("0 - Salir");
-        ps.println("1 - Dados tres apellidos, la computadora los muestra ordenados alfabéticamente.");
-        ps.println("2 - Dados cuatro números reales, la computadora indica cuál es el menor.");
-        ps.println("3 - Dado un número, la computadora indica si es par o impar.");
-        ps.println("4 - Dados dos números reales, la computadora indica si el mayor es divisible por el menor.");
-        ps.println("5 - Dada la fecha de nacimiento de una persona, la computadora muestra su signo del zodíaco.");
-        ps.println("6 - Dado el nombre y apellido de 2 personas, la computadora muestra cuál de los 2 tiene el apellido más largo.");
-        ps.println("7 - Dado un entero N natural, la computadora muestra su tabla de multiplicar.");
-        ps.println("8 - Dado un número natural, la computadora indica si es primo o no.");
+        ps.println("1");
+        ps.println("2");
+        ps.println("3");
+        ps.println("4");
+        ps.println("5");
+        ps.println("6");
+        ps.println("7");
+        ps.println("8");
         ps.println("");
-        ps.println("Tu opción: ");
+        ps.println("Ejercicio Seleccionado: ");
 
         int opcion = Integer.parseInt(funciones.leer());
 
         switch(opcion) {
             case 0:
             	ps.println("");
-                ps.println("Saliendo al menú principal...");
+                ps.println("Has salido");
                 ps.println("");
                 MenuPrincipal();
                 break;
             case 1:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
                 Ejercicio2.Ej2a();
                 MenuEjer2();
             case 2:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2b();
                 MenuEjer2();
             case 3:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2c();
                 MenuEjer2();
             case 4:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2d();
                 MenuEjer2();
             case 5:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2e();
                 MenuEjer2();
             case 6:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2f();
                 MenuEjer2();
             case 7:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2g();
                 MenuEjer2();
             case 8:
             	ps.println("");
-                ps.println("Ejecutando ejercicio...");
+                ps.println("Ejercicio Seleccionado:");
                 ps.println("");
-                ps.println("---------------------------------------------------------------");
+                 
                 ps.println("");
-                Ejercicio2.Ej2a();
+                Ejercicio2.Ej2h();
                 MenuEjer2();
             default:
             	ps.println("");
-                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
+                ps.println("Opcion no valida");
                 MenuEjer2();
         }
+        ps.close();
+    }
+	
+	
+	
+	
+	// MENÚ EJERCICIO 2
+	public static void MenuEjer3() {
+        PrintStream ps = new PrintStream(System.out);
         
-        }
-		public static void MenuEjer3() {
-	        PrintStream ps = new PrintStream(System.out);
-	        
-	        ps.println("");
-	        ps.println("---------------------------------------------------------------");
-	        ps.println("");
-	        ps.println("Elige un ejercicio para ver:");
-	        ps.println("");
-	        ps.println("0 - Salir");
-	        ps.println("1 - ");
-	        ps.println("2 - ");
-	        ps.println("");
-	        ps.println("Tu opción: ");
-	
-	        int opcion = Integer.parseInt(funciones.leer());
-	
-	        switch(opcion) {
-	            case 0:
-	            	ps.println("");
-	                ps.println("Saliendo al menú principal...");
-	                ps.println("");
-	                MenuPrincipal();
-	                break;
-	            case 1:
-	            	ps.println("");
-	                ps.println("Ejecutando ejercicio...");
-	                ps.println("");
-	                ps.println("---------------------------------------------------------------");
-	                ps.println("");
-	                Ejercicio3.Ej3a();
-	                MenuEjer3();
-	            case 2:
-	            	ps.println("");
-	                ps.println("Ejecutando ejercicio...");
-	                ps.println("");
-	                ps.println("---------------------------------------------------------------");
-	                ps.println("");
-	                Ejercicio3.Ej3b();
-	                MenuEjer3();
-	            default:
-	            	ps.println("");
-	                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
-	                MenuEjer3();
-	        	}
-			}
-	        public static void MenuEjer4() {
-		        PrintStream ps = new PrintStream(System.out);
-		        
-		        ps.println("");
-		        ps.println("---------------------------------------------------------------");
-		        ps.println("");
-		        ps.println("Elige un ejercicio para ver:");
-		        ps.println("");
-		        ps.println("0 - Salir");
-		        ps.println("1 - ");
-		        ps.println("2 - ");
-		        ps.println("");
-		        ps.println("Tu opción: ");
-		
-		        int opcion = Integer.parseInt(funciones.leer());
-		
-		        switch(opcion) {
-		            case 0:
-		            	ps.println("");
-		                ps.println("Saliendo al menú principal...");
-		                ps.println("");
-		                MenuPrincipal();
-		                break;
-		            case 1:
-		            	ps.println("");
-		                ps.println("Ejecutando ejercicio...");
-		                ps.println("");
-		                ps.println("---------------------------------------------------------------");
-		                ps.println("");
-		                Ejercicio3.Ej3a();
-		                MenuEjer3();
-		            case 2:
-		            	ps.println("");
-		                ps.println("Ejecutando ejercicio...");
-		                ps.println("");
-		                ps.println("---------------------------------------------------------------");
-		                ps.println("");
-		                Ejercicio3.Ej3b();
-		                MenuEjer3();
-		            default:
-		            	ps.println("");
-		                ps.println("Opción inválida. Por favor, ingrese una opción que se encuentre disponible.");
-		                MenuEjer3();
-		        }
-	        ps.close();
-	}
-	
-}
-	
+        ps.println("");
+         
+        ps.println("");
+        ps.println("Seleccione un ejercicio");
+        ps.println("");
+        ps.println("0 - Salir");
+        ps.println("1");
+        ps.println("2");
+        ps.println("3");
+        ps.println("4");
+        ps.println("5");
+        ps.println("6");
+        ps.println("7");
+        ps.println("");
+        ps.println("Ejercicio Seleccionado:");
 
+        int opcion = Integer.parseInt(funciones.leer());
+
+        switch(opcion) {
+            case 0:
+            	ps.println("");
+                ps.println("Has salido");
+                ps.println("");
+                MenuPrincipal();
+                break;
+            case 1:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3a();
+                MenuEjer3();
+            case 2:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3b();
+                MenuEjer3();
+            case 3:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3c();
+                MenuEjer3();
+            case 4:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3d();
+                MenuEjer3();
+            case 5:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3e();
+                MenuEjer3();
+            case 6:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3f();
+                MenuEjer3();
+            case 7:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio3.Ej3g();
+                MenuEjer3();
+            default:
+            	ps.println("");
+                ps.println("Opci�n no valida");
+                MenuEjer3();
+        }
+        ps.close();
+    }
+	
+	
+	
+	
+	public static void MenuEjer4() {
+        PrintStream ps = new PrintStream(System.out);
+        
+        ps.println("");
+         
+        ps.println("");
+        ps.println("Seleccione un ejercicio");
+        ps.println("");
+        ps.println("0 - Salir");
+        ps.println("1");
+        ps.println("2");
+        ps.println("3");
+        ps.println("4");
+        ps.println("5");
+        ps.println("7");
+        ps.println("");
+        ps.println("Ejercicio Seleccionado:");
+
+        int opcion = Integer.parseInt(funciones.leer());
+
+        switch(opcion) {
+            case 0:
+            	ps.println("");
+                ps.println("Has salido");
+                ps.println("");
+                MenuPrincipal();
+                break;
+            case 1:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio4.Ej4a();
+                MenuEjer3();
+            case 2:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio4.Ej4b();
+                MenuEjer3();
+            case 3:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio4.Ej4c();
+                MenuEjer3();
+            case 4:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio4.Ej4d();
+                MenuEjer3();
+            case 5:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio4.Ej4e();
+                MenuEjer3();
+            case 7:
+            	ps.println("");
+                ps.println("Ejercicio Seleccionado:");
+                ps.println("");
+                 
+                ps.println("");
+                Ejercicio4.Ej4g();
+                MenuEjer3();
+            default:
+            	ps.println("");
+                ps.println("Opci�n no valida");
+                MenuEjer3();
+        }
+        ps.close();
+    }
+}

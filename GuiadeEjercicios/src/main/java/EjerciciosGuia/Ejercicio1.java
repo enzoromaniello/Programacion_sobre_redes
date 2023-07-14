@@ -7,7 +7,6 @@ public class Ejercicio1 {
 	
 	static PrintStream ps = new PrintStream(System.out);
 	
-	// Dados el valor de una hora de trabajo y la cantidad de horas trabajadas, la computadora muestra el valor del sueldo bruto.
 	public static void Ej1a() {
 		ps.println("Pago por hora: ");
 		int ph = Integer.parseInt(funciones.leer());
@@ -22,10 +21,6 @@ public class Ejercicio1 {
 	}
 	
 	
-	
-	
-	
-	// Dados los valores de dos de los ángulos interiores de un triángulo, la computadora muestra el valor del restante.
 	public static void Ej1b() {
 		ps.println("Ingrese el valor de los dos angulos interiores del triangulo: ");
 
@@ -39,10 +34,6 @@ public class Ejercicio1 {
 	}
 	
 	
-	
-	
-	
-	// Dada la superficie de un cuadrado (en m2), la computadora muestra su perímetro.
 	public static void Ej1c() {
 		ps.print("Ingrese la superficie del cuadrado (en m2): ");
 		
@@ -56,10 +47,6 @@ public class Ejercicio1 {
 	}
 	
 	
-	
-	
-	
-	// Dada una temperatura en grados Fahrenheit, la computadora la muestra en grados centígrados.
 	public static void Ej1d() {
 		ps.print("Ingrese la temperatura en grados Fahrenheit: ");
 		
@@ -72,10 +59,6 @@ public class Ejercicio1 {
 	}
 	
 	
-	
-	
-	
-	// Dado un tiempo en segundos, la computadora lo muestra expresado en días, horas, minutos y segundos.
 	public static void Ej1e() {
 		ps.print("Ingrese el tiempo en segundos: ");
 		
@@ -91,16 +74,6 @@ public class Ejercicio1 {
 	}
 	
 	
-	
-	
-	
-	/*
-	   Dado el precio de un artículo, la computadora muestra los valores a pagar según cada plan. Una casa de artículos para el hogar ofrece a sus clientes los siguientes planes de pago:
-	   Plan 1: 100% al contado. Se hace el 10% de descuento sobre el precio publicado.
-	   Plan 2: 50% al contado y el resto en 2 cuotas iguales. El precio publicado se incrementa en un 10%.
-	   Plan 3: 25% al contado y el resto en 5 cuotas iguales. El precio publicado se incrementa en un 15%.
-	   Plan 4: Totalmente financiado en 8 cuotas. El 60% se reparte en partes iguales en las primeras 4 cuotas y el resto se reparte en partes iguales en las últimas 4 cuotas. El precio publicado se incrementa en un 25%.
-	*/
 	public static void Ej1f() {
 	    ps.print("Ingrese el precio del artículo: ");
 	    double precio = Double.parseDouble(funciones.leer());
@@ -130,10 +103,6 @@ public class Ejercicio1 {
 	}
 	
 	
-	
-	
-	
-	// Dado el signo zodiacal del usuario, la computadora muestra su mes de nacimiento aproximado.
 	public static void Ej1g() {
 		ps.print("Ingrese su signo zodiacal (sin mayúsculas ni acentos): ");
 		String signo = funciones.leer();
