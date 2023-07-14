@@ -13,17 +13,9 @@ import java.util.List;
 import java.io.PrintWriter;
 import java.io.FileReader;
 
-public class tp1 {
+public class ejercicio {
 	static PrintStream ps = System.out;
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	
-	
-	/*   
-	 * 
-	 *  PUNTO 1
-	 * 
-	 * 
-	 * */
 	
 	public static void ingresarDatos() {
 	    ps.println("¿Cuántos datos desea ingresar?");
@@ -110,15 +102,6 @@ public class tp1 {
 	}
 	
 	
-	/*
-	 * 
-	 * 
-	 *   PUNTO 2
-	 * 
-	 * 
-	 * 
-	 */
-	
 	public static void generarArchivoResultadosYError(String[] datos) {
 	    File archivo = new File("resultados.txt");
 	    File archivoError = new File("error.txt");
@@ -167,15 +150,6 @@ public class tp1 {
 	}
 	
 	
-	/*
-	 * 
-	 * 
-	 *   PUNTO 3
-	 * 
-	 * 
-	 */
-	
-	
 	public static void generarArchivoResultadosYErrorDos(String[] datos) {
 		String cadena = leer();
 		String[] lineas = cadena.split("\n");
@@ -196,9 +170,9 @@ public class tp1 {
                 
                 String resultado = "";
                 try {
-                    double result = numero1 / numero2;
-                	resultado += result;
-                    ps.println(result + ": ");
+                    //double result = numero1 / numero2;
+                	//resultado += result;
+                    //ps.println(result + ": ");
                 } catch (NumberFormatException | ArithmeticException e) {
                 	pwr.println(datos[i] + " / " + datos[i + 1] + " = " + "error: " + e.getMessage());
                     resultado = "Error: División por cero";
@@ -208,23 +182,6 @@ public class tp1 {
                 pw.write(linea);
             }
 		
-			/*
-			for( int i = 0; i < lineas.length; i++ ) {
-				double numero1 = Double.parseDouble(lineas[i]);
-                int numero2 = 3;
-                
-                String resultado = "";
-                try {
-                    double result = numero1 / numero2;
-                    resultado += result;
-                    pw.write(numero1 + " / " + numero2 + " = " + resultado + "\n");
-                } catch (NumberFormatException | ArithmeticException e) {
-                	pwr.println(lineas[i] + " / " + lineas[i + 1] + " = " + "error: " + e.getMessage());
-                    resultado = "Error: División por cero";
-                }
-				
-			}
-			*/
 			
 			for (int i = 0; i < lineas.length - 1; i++) {
 			    if (!lineas[i].isEmpty()) {
@@ -234,9 +191,9 @@ public class tp1 {
 
 			            String resultado = "";
 			            try {
-			                double result = numero1 / numero2;
-			                resultado += result;
-			                pw.write(numero1 + " / " + numero2 + " = " + resultado + "\n");
+			                //double result = numero1 / numero2;
+			                //resultado += result;
+			                //pw.write(numero1 + " / " + numero2 + " = " + resultado + "\n");
 			            } catch (NumberFormatException | ArithmeticException e) {
 			                pwr.println(lineas[i] + " / " + lineas[i + 1] + " = " + "error: " + e.getMessage());
 			                resultado = "Error: División por cero";
@@ -247,7 +204,6 @@ public class tp1 {
 			        }
 			    }
 			}
-			
 			
 			
 			
@@ -263,7 +219,6 @@ public class tp1 {
         
 
 	}
-	
 	
 	public static String leer() {
 		   
