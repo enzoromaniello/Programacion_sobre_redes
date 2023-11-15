@@ -5,7 +5,7 @@ public class MainServidor {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
-        servidor s = new servidor();
+        Servidor s = new Servidor();
 
         s.serverOn();
 

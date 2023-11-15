@@ -6,11 +6,11 @@ import java.io.IOException;
 
 import utiles.Conexion;
 
-public class servidor extends Conexion {
+public class Servidor extends Conexion {
 
 	DataInputStream disSer = null;
 
-	public servidor() {
+	public Servidor() {
 		
 	}
 
@@ -43,7 +43,7 @@ public class servidor extends Conexion {
 						public void run() {
 							try {
 									while (msgToSend != "/exit" || msg != "/exit") {
-										msg = disSer.readUTF();
+									msg = disSer.readUTF();
 										if(msg.equals("/exit"))
 										{
 											ps.println(ANSI_GREEN + "-------- Cliente desconectado --------" + ANSI_RESET);

@@ -6,11 +6,11 @@ import java.io.IOException;
 
 import utiles.Conexion;
 
-public class cliente extends Conexion {
+public class Cliente extends Conexion {
 
     DataInputStream disCli = null;
 
-    public cliente() {
+    public Cliente() {
     	 
     }
 
